@@ -51,19 +51,41 @@ public class TourMap extends View {
          **  YOUR CODE GOES HERE
          **
          **/
+
+        // Set a paint for line between points.
+        Paint linePaint = new Paint();
+        linePaint.setColor(Color.GREEN);
+
+        // Draw lines and keep track with the first and current points.
+        Point firstPoint = new Point(0, 0);
+        Point curPoint = new Point(0,0);
+
         for (Point p : list) {
             /**
              **
              **  YOUR CODE GOES HERE
              **
              **/
+
+            if (curPoint.equals(0,0)){ // Copy p to current and first
+                curPoint = new Point(p);
+                firstPoint = new Point(p);
+            } else // draw a line between the current and p
+                canvas.drawLine(curPoint.x, curPoint.y, p.x, p.y, linePaint);
+
+            // update current with p and draw a circle at p
+            curPoint = p;
             canvas.drawCircle(p.x, p.y, 20, pointPaint);
         }
+
         /**
          **
          **  YOUR CODE GOES HERE
          **
          **/
+
+        // Now, we draw the last line between the first and last points.
+        canvas.drawLine(curPoint.x, curPoint.y, firstPoint.x, firstPoint.y, linePaint);
     }
 
     @Override
