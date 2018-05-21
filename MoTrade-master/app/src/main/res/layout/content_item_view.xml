@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.demouser.motrade.ItemViewActivity"
+    tools:showIn="@layout/activity_item_view">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="top|center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="365dp">
+
+            <requestFocus />
+
+            <ImageView
+                android:id="@+id/itemIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:maxHeight="500px"
+                android:maxWidth="500px"
+                android:minHeight="400px"
+                android:minWidth="400px"
+                android:scaleType="centerInside"
+                app:srcCompat="@android:color/holo_green_dark" />
+
+            <TextView
+                android:id="@+id/itemNameView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Item Name Here"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/itemPriceView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="$$$"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/black"
+                android:padding="5dp"
+                app:srcCompat="?attr/dividerHorizontal" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="109dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/itemDescriptionView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:scrollHorizontally="false"
+                        android:scrollbars="vertical"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum maximus orci, id ullamcorper neque tempus quis. In massa erat, ultrices ut justo et, euismod mollis nibh. Nullam cursus, nulla sed condimentum bibendum, eros ipsum commodo enim, at dignissim turpis tellus sit amet lectus. Fusce tincidunt libero non rhoncus cursus. Fusce faucibus odio eu velit ullamcorper, sit amet gravida neque gravida. Curabitur diam diam, iaculis at lacinia non, posuere ac urna. Aenean eu justo eros. In et lorem turpis. Curabitur sapien velit, vehicula vel metus ac, consequat scelerisque metus. Sed faucibus volutpat scelerisque. Proin consectetur euismod metus et sodales. Nam consequat viverra dui, at cursus nulla tristique sed."
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </ScrollView>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="@android:color/black" />
+
+            <EditText
+                android:id="@+id/itemMessageView"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:text="Leave a message for the seller"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/interestButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="I'm Interested" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
