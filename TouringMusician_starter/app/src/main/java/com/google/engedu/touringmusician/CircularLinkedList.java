@@ -76,7 +76,7 @@ public class CircularLinkedList implements Iterable<Point> {
          **/
         if (head != null) {
             Node temp = head;
-            while (temp.next != null) {
+            while (temp.next != head) {
                 // Distance between point of temp and the next point
                 total += distanceBetween(temp.point, temp.next.point);
                 temp = temp.next;
@@ -92,6 +92,29 @@ public class CircularLinkedList implements Iterable<Point> {
          **
          **/
 
+        Node temp = head;
+        Node nearest = null;
+        if (temp == null || temp.next == head) { // if the list is empty or it has only one node
+            insertBeginning(p);
+        }
+        else { // traverse the list to find the smallest distance
+            float nearestDist = Float.MAX_VALUE;
+            while (temp.next != head) {
+                float dist = distanceBetween(temp.point, p);
+                if (dist < nearestDist) {
+                    nearestDist = dist;
+                    nearest = temp;
+                }
+                temp = temp.next;
+
+            }
+        }
+
+        // Insert the new Node after the nearest node
+        Node newNode = new Node(p);
+        nearest.next = newNode;
+        nearest = nearest.next;
+        nearest.prev = newNode;
     }
 
     public void insertSmallest(Point p) {
@@ -100,6 +123,20 @@ public class CircularLinkedList implements Iterable<Point> {
          **  YOUR CODE GOES HERE
          **
          **/
+
+        Node temp = head;
+        if (temp == null || temp.next == head) { // if the list is empty or it has only one node
+            insertBeginning(p);
+        }
+        else {
+            Node prevNode = temp;
+            Node nextNode = temp.next;
+            float prevDist = distanceBetween(prevNode.point, p);
+            float nextDist = distanceBetween(nextNode.point, p);
+            while (temp != head) {
+
+            }
+        }
     }
 
     public void reset() {

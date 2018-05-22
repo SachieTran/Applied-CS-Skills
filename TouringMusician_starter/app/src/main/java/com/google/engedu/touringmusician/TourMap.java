@@ -57,8 +57,8 @@ public class TourMap extends View {
         linePaint.setColor(Color.GREEN);
 
         // Draw lines and keep track with the first and current points.
-        Point firstPoint = new Point(0, 0);
-        Point curPoint = new Point(0,0);
+        Point firstPoint = null;
+        Point curPoint = null;
 
         for (Point p : list) {
             /**
@@ -67,7 +67,7 @@ public class TourMap extends View {
              **
              **/
 
-            if (curPoint.equals(0,0)){ // Copy p to current and first
+            if (curPoint == null){ // Copy p to current and first
                 curPoint = new Point(p);
                 firstPoint = new Point(p);
             } else // draw a line between the current and p
